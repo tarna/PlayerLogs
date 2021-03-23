@@ -1,0 +1,7 @@
+name: PlayerLogs
+version: ${project.version}
+main: me.tarna.playerlogs.PlayerLogs
+api-version: 1.16
+authors: [ Tarna ]
+description: log player events
+website: https://github.com/tarna

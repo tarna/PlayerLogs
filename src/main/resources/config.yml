@@ -1,0 +1,10 @@
+server-start: true
+server-stop: true
+block-place: true
+block-break: true
+join: true
+leave: true
+chat: true
+commands: true
+tnt-ignite: true
+world-change: true
