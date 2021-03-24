@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: feature request
 assignees: ''
 
 ---
@@ -13,5 +13,4 @@ assignees: ''
 
 **Describe your feature**
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Additional context** (Add any other context such as why this should be added or how it would be useful.)
