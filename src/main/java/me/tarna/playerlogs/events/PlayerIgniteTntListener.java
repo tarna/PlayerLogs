@@ -20,6 +20,7 @@ public class PlayerIgniteTntListener implements Listener {
 
         Player p = e.getPlayer();
         Block b = e.getClickedBlock();
+        assert b != null;
         if(b.getType() == Material.TNT) {
             if(e.getAction() == Action.RIGHT_CLICK_BLOCK) {
                 String msg = p.getName() + " ignited tnt at location " + util.LocationToText(b.getLocation());
