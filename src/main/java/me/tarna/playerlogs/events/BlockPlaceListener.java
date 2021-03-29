@@ -1,5 +1,6 @@
 package me.tarna.playerlogs.events;
 
+import me.tarna.playerlogs.PlayerLogs;
 import me.tarna.playerlogs.lib.Log;
 import me.tarna.playerlogs.lib.Util;
 import org.bukkit.block.Block;
@@ -11,9 +12,11 @@ public class BlockPlaceListener implements Listener {
 
     Util util = new Util();
     Log log;
+    PlayerLogs main = PlayerLogs.instance;
 
     @EventHandler
     public void OnPlace(BlockPlaceEvent e) {
+        if(!main.getConfig().getBoolean("block-place")) return;
         Block b = e.getBlock();
         String msg = e.getPlayer().getName() + " placed " + b.getType().toString() + " " + util.LocationToText(b.getLocation());
         log = new Log("block-place", msg);
