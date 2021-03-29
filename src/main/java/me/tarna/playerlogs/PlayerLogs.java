@@ -1,5 +1,6 @@
 package me.tarna.playerlogs;
 
+import me.tarna.playerlogs.commands.PlayerLogsCommand;
 import me.tarna.playerlogs.events.*;
 import me.tarna.playerlogs.lib.Log;
 import org.bstats.bukkit.Metrics;
@@ -11,9 +12,12 @@ public final class PlayerLogs extends JavaPlugin {
 
     Log log;
     FileConfiguration config = getConfig();
+    public static PlayerLogs instance;
 
     @Override
     public void onEnable() {
+
+        instance = this;
 
         loadBStats();
 
@@ -23,14 +27,15 @@ public final class PlayerLogs extends JavaPlugin {
 
         PluginManager pm = getServer().getPluginManager();
 
-        if(config.getBoolean("block-break")) {pm.registerEvents(new BlockBreakListener(), this);}
-        if(config.getBoolean("block-place")) {pm.registerEvents(new BlockPlaceListener(), this);}
-        if(config.getBoolean("join")) {pm.registerEvents(new JoinListener(), this);}
-        if(config.getBoolean("leave")) {pm.registerEvents(new LeaveListener(), this);}
-        if(config.getBoolean("chat")) {pm.registerEvents(new ChatListener(), this);}
-        if(config.getBoolean("commands")) {pm.registerEvents(new CommandListener(), this);}
-        if(config.getBoolean("tnt-ignite")) {pm.registerEvents(new PlayerIgniteTntListener(), this);}
-        if(config.getBoolean("world-change")) {pm.registerEvents(new WorldChangeListener(), this);}
+        getCommand("playerlogs").setExecutor(new PlayerLogsCommand());
+
+        pm.registerEvents(new BlockBreakListener(), this);
+        pm.registerEvents(new BlockPlaceListener(), this);
+        pm.registerEvents(new JoinListener(), this);
+        pm.registerEvents(new LeaveListener(), this);
+        pm.registerEvents(new ChatListener(), this);
+        pm.registerEvents(new CommandListener(), this);
+        pm.registerEvents(new WorldChangeListener(), this);
 
         if(config.getBoolean("server-start")) {log = new Log("server-status", "Server Started!");}
 
