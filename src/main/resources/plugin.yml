@@ -5,3 +5,11 @@ api-version: 1.16
 authors: [ Tarna ]
 description: log player events
 website: https://github.com/tarna
+
+commands:
+  playerlogs:
+    aliases:
+      - plogs
+    description: reload the PlayerLogs plugin's config
+    permission: playerlogs.reload
+    permission-message: &cYou do not have permission to use this command!
