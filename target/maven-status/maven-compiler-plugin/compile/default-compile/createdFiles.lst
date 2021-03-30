@@ -1,0 +1,11 @@
+me\tarna\playerlogs\commands\PlayerLogsCommand.class
+me\tarna\playerlogs\events\WorldChangeListener.class
+me\tarna\playerlogs\lib\Log.class
+me\tarna\playerlogs\events\BlockBreakListener.class
+me\tarna\playerlogs\events\JoinListener.class
+me\tarna\playerlogs\lib\Util.class
+me\tarna\playerlogs\PlayerLogs.class
+me\tarna\playerlogs\events\LeaveListener.class
+me\tarna\playerlogs\events\CommandListener.class
+me\tarna\playerlogs\events\ChatListener.class
+me\tarna\playerlogs\events\BlockPlaceListener.class
