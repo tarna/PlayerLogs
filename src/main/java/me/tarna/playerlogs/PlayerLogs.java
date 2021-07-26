@@ -2,15 +2,15 @@ package me.tarna.playerlogs;
 
 import me.tarna.playerlogs.commands.PlayerLogsCommand;
 import me.tarna.playerlogs.events.*;
-import me.tarna.playerlogs.lib.Log;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static me.tarna.playerlogs.lib.Util.LogMessage;
+
 public final class PlayerLogs extends JavaPlugin {
 
-    Log log;
     FileConfiguration config = getConfig();
     public static PlayerLogs instance;
 
@@ -37,7 +37,7 @@ public final class PlayerLogs extends JavaPlugin {
         pm.registerEvents(new CommandListener(), this);
         pm.registerEvents(new WorldChangeListener(), this);
 
-        if(config.getBoolean("server-start")) {log = new Log("server-status", "Server Started!");}
+        if(config.getBoolean("server-start")) {LogMessage("server-status", "Server Started!");}
 
     }
 
@@ -45,7 +45,7 @@ public final class PlayerLogs extends JavaPlugin {
     public void onDisable() {
 
         getLogger().info("PlayerLogs Disabled!");
-        if(config.getBoolean("server-start")) {log = new Log("server-status", "Server Closed!");}
+        if(config.getBoolean("server-start")) {LogMessage("server-status", "Server Closed!");}
 
     }
 

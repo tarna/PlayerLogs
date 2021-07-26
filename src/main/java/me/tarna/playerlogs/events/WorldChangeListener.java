@@ -1,15 +1,15 @@
 package me.tarna.playerlogs.events;
 
 import me.tarna.playerlogs.PlayerLogs;
-import me.tarna.playerlogs.lib.Log;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 
+import static me.tarna.playerlogs.lib.Util.LogMessage;
+
 public class WorldChangeListener implements Listener {
 
-    Log log;
     PlayerLogs main = PlayerLogs.instance;
 
     @EventHandler
@@ -19,7 +19,7 @@ public class WorldChangeListener implements Listener {
         String w = p.getWorld().getName();
 
         String msg = p.getName() + " changed worlds to " + w;
-        log = new Log("word-change", msg);
+        LogMessage("word-change", msg);
 
     }
 }

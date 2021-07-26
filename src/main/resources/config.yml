@@ -8,3 +8,7 @@ chat: true
 commands: true
 tnt-ignite: true
 world-change: true
+
+command-blacklist:
+  #- command1
+  #- command2

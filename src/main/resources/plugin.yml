@@ -12,4 +12,4 @@ commands:
       - plogs
     description: reload the PlayerLogs plugin's config
     permission: playerlogs.reload
-    permission-message: &cYou do not have permission to use this command!
+    permission-message: You do not have permission to use this command!
